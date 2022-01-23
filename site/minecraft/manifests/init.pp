@@ -17,4 +17,8 @@ class minecraft {
     ensure => file,
     source => 'puppet:///modules/minecraft/minecraft.service'
   }
+  service { 'minecraft':
+    ensure => running, # start the resource when the resource is evaluated
+    enable => true, # enable at boot
+  }
 }
